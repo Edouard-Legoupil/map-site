@@ -2,33 +2,47 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>Map Site</title>
-    <link rel="stylesheet" href="map.css" type="text/css" />
-    <link rel="stylesheet" href="style.css" type="text/css" />
-    <link rel="shortcut icon" href="http://mapbox.com/images/favicon.ico" type="image/x-icon" />
+    <title>Camp Mapping</title>
+    <link rel="stylesheet" href="fonts/fonts.css" type="text/css" />
+    <link rel="stylesheet" href="css/map.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
 </head>
 <body class="right">
     <div id="header"><div class="limiter">
         <img src="img/unhcr_logo.png">
-	<h1>DJABAL REFUGEE CAMP, Eastern Chad, 2005</h1>
+    <h1>DJABAL REFUGEE CAMP, Eastern Chad, 2005</h1>
     </div></div>
     <div id="content"><div class="limiter">
         <h2>Base layers:</h2>
         <div id="nav" class="layers">
-          <a data-control="layer" href="#services">Services</a>
+          <a data-control="layer" href="#services">Community Services</a>
           <a data-control="layer" href="#address">Addressing sytem</a>
         </div>
         <h2>Refugee population:</h2>
         <div id="nav" class="layers">
           <a data-control="layer" href="#popblocks">By blocks</a>
           <a data-control="layer" href="#poplots">By lots</a>
-	  <a data-control="layer" href="#popethnicity">Ethnicity</a>
+          <a data-control="layer" href="#popethnicity">Ethnicity</a>
         </div>
         <h2>Water and Sanitation:</h2>
         <div id="nav" class="layers">
           <a data-control="layer" href="#watsan">Taps, bladders and tanks</a>
-	  <a data-control="layer" href="#watsanbuff">200m distance buffers</a>
+          <a data-control="layer" href="#watsanbuff">200m distance buffers</a>
         </div>
+         <p></p>
+         <p></p>
+         <div id="about">
+            <p><a href="http://www.unhcr.org/">UNHCR</a> hold the mandate to protect refugees.</p>
+        </div>
+            <h2>Partnering</h2>
+            <p>Working with a range of implementing partners, the organisation manage large refugee camps in various part of the world.</p>
+            <h2>Base map</h2>
+            <p>Camps base map are created through diffrent sources: digtilisation from sateliite imagery, ground truthing with camp managers. This can involve other UN agencies like UNOSAT or Online communities like Open Street Map</p>
+            <h2>Indicators and population</h2>
+            <p>Once the adressing system has been recorded, various thematic layers can be produced. You can visualise some of them below:</p>
+          
+        
     </div></div>
     <div id="map" class="map"></div>
 
@@ -39,6 +53,8 @@
     <script src="ext/wax/wax.ext.js"></script>
     <script src="ext/easey.js"></script>
     <script src="ext/mmg.js"></script>
+    
+    
     <script src="script.js"></script>
     
     <!-- Site configuration -->
@@ -65,9 +81,9 @@
 
         main.layers({
             services: {
-            	api:'http://a.tiles.mapbox.com/v3/unhcr.djabal-services.jsonp',
+                api:'http://a.tiles.mapbox.com/v3/unhcr.djabal-services.jsonp',
                 center: {
-		 lat: 12.2265,
+         lat: 12.2265,
                  lon: 21.390,
                  zoom: 16,
                  ease: 1000
@@ -76,7 +92,7 @@
                 initial: true
             },
             address: {
-            	api:'http://a.tiles.mapbox.com/v3/unhcr.djabal-addressing-system.jsonp',
+                api:'http://a.tiles.mapbox.com/v3/unhcr.djabal-addressing-system.jsonp',
                 center: {
                     lat: 12.2265,
                     lon: 21.390,
@@ -85,8 +101,8 @@
                 },
                 group: 1
             },
-	    popblocks: {
-		api:'http://a.tiles.mapbox.com/v3/unhcr.djabal-pop-blocks.jsonp',
+        popblocks: {
+        api:'http://a.tiles.mapbox.com/v3/unhcr.djabal-pop-blocks.jsonp',
                 center: {
                     lat: 12.2265,
                     lon: 21.390,
@@ -94,9 +110,9 @@
                     ease: 2000
                 },
                 group: 2
-	    },
-	    poplots: {
-		api:'http://a.tiles.mapbox.com/v3/unhcr.djabal-pop-lots.jsonp',
+        },
+        poplots: {
+        api:'http://a.tiles.mapbox.com/v3/unhcr.djabal-pop-lots.jsonp',
                 center: {
                     lat: 12.2265,
                     lon: 21.390,
@@ -104,9 +120,9 @@
                     ease: 2000
                 },
                 group: 2
-	    },
-	    popethnicity: {
-		api:'http://a.tiles.mapbox.com/v3/unhcr.djabal-ethnicity.jsonp',
+        },
+        popethnicity: {
+        api:'http://a.tiles.mapbox.com/v3/unhcr.djabal-ethnicity.jsonp',
                 center: {
                     lat: 12.2265,
                     lon: 21.390,
@@ -114,9 +130,9 @@
                     ease: 2000
                 },
                 group: 2
-	    },
-	    watsan: {
-		api:'http://a.tiles.mapbox.com/v3/unhcr.djabal-watsan-new.jsonp',
+        },
+        watsan: {
+        api:'http://a.tiles.mapbox.com/v3/unhcr.djabal-watsan-new.jsonp',
                 center: {
                     lat: 12.2265,
                     lon: 21.390,
@@ -124,9 +140,9 @@
                     ease: 2000
                 },
                 group: 3
-	    },
-	    watsanbuff: {
-		api:'http://a.tiles.mapbox.com/v3/unhcr.djabal-watsan-buff.jsonp',
+        },
+        watsanbuff: {
+        api:'http://a.tiles.mapbox.com/v3/unhcr.djabal-watsan-buff.jsonp',
                 center: {
                     lat: 12.2265,
                     lon: 21.390,
@@ -134,7 +150,7 @@
                     ease: 2000
                 },
                 group: 4
-	    }
+        }
         });
     </script>
 </body>
